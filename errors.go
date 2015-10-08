@@ -10,7 +10,7 @@ import (
 
 var (
 	ErrNoSuchCode        = errors.New("referral: no such code")
-	ErrInvalidRedemption = errors.New("reward: invalid redemption due to exceed amount of redeemable credit on account")
+	ErrInvalidRedemption = errors.New("reward: invalid redemption due to zero amount or exceed redeemable credit")
 	ErrBadRequest        = errors.New("saasquatch: bad request")
 )
 
