@@ -161,7 +161,8 @@ type Client struct {
 
 	BaseURL *url.URL
 
-	Referrals      *ReferralsService
+	Referral       *ReferralService
+	ReferralCode   *ReferralCodeService
 	Accounts       *AccountsServices
 	Users          *UsersServices
 	RewardBalances *RewardBalancesServices
@@ -176,7 +177,8 @@ func NewClient(httpClient *http.Client, tenantAlias, apiKey string) *Client {
 	baseURL, _ := url.Parse(u)
 
 	c := &Client{client: httpClient, apiKey: apiKey, BaseURL: baseURL}
-	c.Referrals = &ReferralsService{client: c}
+	c.Referral = &ReferralService{client: c}
+	c.ReferralCode = &ReferralCodeService{client: c}
 	c.Accounts = &AccountsServices{client: c}
 	c.Users = &UsersServices{client: c}
 	c.RewardBalances = &RewardBalancesServices{client: c}
