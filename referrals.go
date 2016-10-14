@@ -27,19 +27,19 @@ type ListReferralsResult struct {
 }
 
 type ReferralObject struct {
-	Id                       string         `json:"id"`
-	ReferredUser             ReferredUser   `json:"referredUser"`
-	ReferrerUser             ReferredUser   `json:"referrerUser"`
-	ReferredReward           ReferredReward `json:"referredReward"`
-	ReferrerReward           ReferredReward `json:"referrerReward"`
-	ModerationStatus         string         `json:"moderationStatus"`
-	ReferredModerationStatus string         `json:"referredModerationStatus"`
-	ReferrerModerationStatus string         `json:"referrerModerationStatus"`
-	FraudSignals             FraudSignals   `json:"fraudSignals"`
-	DateReferralStarted      int            `json:"dateReferralStarted"`
-	DateReferralPaid         int            `json:"dateReferralPaid"`
-	DateReferralEnded        int            `json:"dateReferralEnded"`
-	DateModerated            int            `json:"dateModerated"`
+	Id                       string          `json:"id"`
+	ReferredUser             *ReferredUser   `json:"referredUser"`
+	ReferrerUser             *ReferredUser   `json:"referrerUser"`
+	ReferredReward           *ReferredReward `json:"referredReward"`
+	ReferrerReward           *ReferredReward `json:"referrerReward"`
+	ModerationStatus         string          `json:"moderationStatus"`
+	ReferredModerationStatus string          `json:"referredModerationStatus"`
+	ReferrerModerationStatus string          `json:"referrerModerationStatus"`
+	FraudSignals             *FraudSignals   `json:"fraudSignals,omitempty"`
+	DateReferralStarted      int             `json:"dateReferralStarted"`
+	DateReferralPaid         int             `json:"dateReferralPaid"`
+	DateReferralEnded        int             `json:"dateReferralEnded"`
+	DateModerated            int             `json:"dateModerated"`
 }
 
 type ReferredUser struct {
